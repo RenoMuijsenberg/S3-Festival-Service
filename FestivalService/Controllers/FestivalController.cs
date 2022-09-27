@@ -23,5 +23,12 @@ public class FestivalController : ControllerBase
 
         return festivals;
     }
-        
+
+    [HttpGet("festivals/{festivalName}")]
+    public async Task<FestivalModel> GetSingleFestival(string festivalName)
+    {
+        var festival = await _db.Festivals.FirstAsync(x => x.FestivalName == festivalName);
+
+        return festival;
+    }
 }
