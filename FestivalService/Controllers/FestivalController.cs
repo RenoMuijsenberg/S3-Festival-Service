@@ -1,3 +1,4 @@
+using System.Globalization;
 using FestivalService.DataContext;
 using FestivalService.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ public class FestivalController : ControllerBase
     public async Task<List<FestivalModel>> GetAllFestivals()
     {
         var festivals = await _db.Festivals.ToListAsync();
+        festivals = festivals.OrderBy(x => x.FestivalOrder).ToList();
 
         return festivals;
     }

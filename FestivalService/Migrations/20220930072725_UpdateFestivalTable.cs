@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FestivalService.Migrations
 {
-    public partial class FirstCommit : Migration
+    public partial class UpdateFestivalTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,9 +15,12 @@ namespace FestivalService.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FestivalName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FestivalPrice = table.Column<double>(type: "float", nullable: false),
                     FestivalTimeFrame = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FestivalDate = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    FestivalDay = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FestivalDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FestivalAge = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FestivalPrice = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FestivalLocation = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

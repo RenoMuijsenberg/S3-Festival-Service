@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FestivalService.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20220926112448_FirstCommit")]
-    partial class FirstCommit
+    [Migration("20220930073849_UpdateFestivalTableAgain")]
+    partial class UpdateFestivalTableAgain
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,7 +30,19 @@ namespace FestivalService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("FestivalAge")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FestivalDate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FestivalDay")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FestivalLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -38,8 +50,9 @@ namespace FestivalService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("FestivalPrice")
-                        .HasColumnType("float");
+                    b.Property<string>("FestivalPrice")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FestivalTimeFrame")
                         .IsRequired()
