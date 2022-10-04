@@ -1,8 +1,6 @@
-using System.Globalization;
 using FestivalService.Models;
 using FestivalService.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FestivalService.Controllers;
 
