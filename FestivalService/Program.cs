@@ -1,4 +1,6 @@
-using FestivalService.DataContext;
+using FestivalService.Data;
+using FestivalService.Data.Repositorys;
+using FestivalService.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +22,10 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IFestivalRepository, FestivalRepository>();
+builder.Services.AddScoped<IFestivalService, FestivalService.Services.FestivalService>();
+
 
 var app = builder.Build();
 

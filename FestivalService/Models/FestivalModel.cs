@@ -1,17 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace FestivalService.Models;
+﻿namespace FestivalService.Models;
 
 public class FestivalModel
 {
     public Guid Id { get; set; }
-    public string FestivalName { get; set; }
-    public string FestivalTimeFrame { get; set; }
-    public string FestivalDay { get; set; }
-    public string FestivalDate { get; set; }
-    public string FestivalAge { get; set; }
-    public string FestivalPrice { get; set; }
-    public string FestivalLocation { get; set; }
-    public int? FestivalOrder { get; set; }
+    public string FestivalName { get; set; } = null!;
+    public string FestivalTimeFrame { get; set; } = null!;
+    public string FestivalDay { get; set; } = null!;
+    public string FestivalDate { get; set; } = null!;
+    public string FestivalAge { get; set; } = null!;
+    public string FestivalPrice { get; set; } = null!;
+    public string FestivalLocation { get; set; } = null!;
+    public int? FestivalOrder { get; set; } = null!;
 }   

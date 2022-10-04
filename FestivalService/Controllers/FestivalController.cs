@@ -1,6 +1,6 @@
 using System.Globalization;
-using FestivalService.DataContext;
 using FestivalService.Models;
+using FestivalService.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,27 +10,24 @@ namespace FestivalService.Controllers;
 [ApiController]
 public class FestivalController : ControllerBase
 {
-    private readonly DatabaseContext _db;
+    private readonly IFestivalService _service;
 
-    public FestivalController(DatabaseContext db)
+    public FestivalController(IFestivalService service)
     {
-        _db = db;
+        _service = service;
     }
     
     [HttpGet("festivals")]
     public async Task<List<FestivalModel>> GetAllFestivals()
     {
-        var festivals = await _db.Festivals.ToListAsync();
-        festivals = festivals.OrderBy(x => x.FestivalOrder).ToList();
-
-        return festivals;
+        return await _service.GetAllFestivals();
     }
 
-    [HttpGet("festivals/{festivalName}")]
-    public async Task<FestivalModel> GetSingleFestival(string festivalName)
-    {
-        var festival = await _db.Festivals.FirstAsync(x => x.FestivalName == festivalName);
-
-        return festival;
-    }
+    // [HttpGet("festivals/{festivalName}")]
+    // public async Task<FestivalModel> GetSingleFestival(string festivalName)
+    // {
+    //     var festival = await _db.Festivals.FirstAsync(x => x.FestivalName == festivalName);
+    //
+    //     return festival;
+    // }
 }

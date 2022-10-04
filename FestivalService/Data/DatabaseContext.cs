@@ -1,7 +1,7 @@
 ﻿using FestivalService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace FestivalService.DataContext
+namespace FestivalService.Data
 {
     public class DatabaseContext : DbContext
     {
@@ -9,6 +9,6 @@ namespace FestivalService.DataContext
         {
         }
 
-        public DbSet<FestivalModel> Festivals { get; set; }
+        public DbSet<FestivalModel> Festivals { get; set; } = null!;
     }
 }
