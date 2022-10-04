@@ -16,4 +16,9 @@ public class FestivalRepository : IFestivalRepository
     {
         return await _db.Festivals.ToListAsync();
     }
+    
+    public async Task<FestivalModel> GetSpecificFestival(string name)
+    {
+        return await _db.Festivals.FirstAsync(x => x.FestivalName == name);
+    }
 }

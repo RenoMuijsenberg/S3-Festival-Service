@@ -17,4 +17,9 @@ public class FestivalService : IFestivalService
          var festivals = await _repository.GetAllFestivals();
          return festivals.OrderBy(x => x.FestivalOrder).ToList();
     }
+    
+    public async Task<FestivalModel> GetSpecificFestival(string name)
+    {
+        return await _repository.GetSpecificFestival(name);
+    }
 }
