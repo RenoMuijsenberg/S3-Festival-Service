@@ -1,4 +1,5 @@
-[![Continuous integration](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/main.yml/badge.svg)](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/main.yml)
+[![Build And Test](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/main.yml/badge.svg)](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/main.yml)
+[![SonarCloud Scan](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/sonar-cloud.yaml/badge.svg)](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/sonar-cloud.yaml)
 
 ![01-startup-series-dribbble](https://user-images.githubusercontent.com/43666923/191457379-8ff28917-14c5-443e-a3c7-dd6e91b93713.gif)
 # Festival service
