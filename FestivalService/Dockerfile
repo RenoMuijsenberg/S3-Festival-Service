@@ -9,4 +9,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app .
 
-ENTRYPOINT ["dotnet", "./FestivalService/FestivalService.dll"]
+ENTRYPOINT ["dotnet", "./FestivalService.dll"]
