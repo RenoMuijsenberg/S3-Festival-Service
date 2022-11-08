@@ -16,6 +16,10 @@
 * [C4 model](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki/C4-model#version-2)
 
 ### Setup project locally
+* [Setup and use git for this project](https://github.com/RenoMuijsenberg/S3-Festival-Service/wiki/Setup-and-use-git-for-this-project)
+* [Run local development server](https://github.com/RenoMuijsenberg/S3-Festival-Service/wiki/Start-developing)
+* [Setup database locally](https://github.com/RenoMuijsenberg/S3-Festival-Service/wiki/Setup-local-MS-SQL-database)
+
 
 ### Project issues
 * [Issues](https://github.com/users/RenoMuijsenberg/projects/1)
