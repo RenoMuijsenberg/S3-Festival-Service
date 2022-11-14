@@ -23,14 +23,16 @@ jobs:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - name: Install SonarCloud scanners
+      - name: Install SonarCloud scanners and code coverage scanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
+          dotnet tool install --global JetBrains.dotCover.GlobalTool
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          dotnet-sonarscanner begin /k:"RenoMuijsenberg_S3-Festival-Service" /o:"renomuijsenberg" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet-sonarscanner begin /k:"RenoMuijsenberg_S3-Festival-Service" /o:"renomuijsenberg" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.dotcover.reportsPaths=dotCover.Output.html
           dotnet build
+          dotnet dotcover test --dcReportType=HTML
           dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
