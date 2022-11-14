@@ -25,4 +25,4 @@ jobs:
         run: dotnet build -c Release --no-restore ./FestivalService/FestivalService.csproj
 
       - name: Run automated tests
-        run: dotnet test --no-restore --verbosity normal
+        run: dotnet test --no-build --verbosity normal
