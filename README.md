@@ -3,7 +3,7 @@
 [![SonarCloud Scan](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/sonar-cloud.yaml/badge.svg)](https://github.com/RenoMuijsenberg/S3-Festival-Service/actions/workflows/sonar-cloud.yaml)
 
 # Festival service
-This project is part of the 'Festival planner' application. The goal of the 'Festival planner' application is to quickly view what festival are upcoming and be able to add them to your Google calendar.
+This project is part of the 'Festival planner' application. The goal of the 'Festival planner' application is to quickly view what festival are upcoming and be able to add them to your Google calendar with just the press of a button.
 
 ### Project documentation
 * [Project description / inspiration](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki)
