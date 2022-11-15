@@ -2,8 +2,9 @@ name: Build And Test
 
 on:
   push:
-    branches:
-      - "**"
+    branches: [ "main", "dev" ] 
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -19,10 +20,10 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore ./FestivalService/FestivalService.csproj
+        run: dotnet restore
         
       - name: Build app
-        run: dotnet build -c Release --no-restore ./FestivalService/FestivalService.csproj
+        run: dotnet build --no-restore
 
       - name: Run automated tests
         run: dotnet test --no-build --verbosity normal
