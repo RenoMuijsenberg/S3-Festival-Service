@@ -28,6 +28,4 @@ jobs:
           context: ./FestivalService
           file: ./FestivalService/Dockerfile
           push: true
-          build-args: |
-            version=${{ steps.tag.outputs.tag }}
           tags: ${{ secrets.ACR_ENDPOINT }}/${{ env.IMAGE_NAME }}:latest
