@@ -10,8 +10,8 @@ You are viewing a project that is part of the 'Festival planner' application. Th
 * [User story's](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki/User-story's) 
 
 ### Project research
-* [Git flow research]()
-* [Cors research]()
+* [Git flow research](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki/Git-Flow-research)
+* [Cors research](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki/CORS-research)
 
 ### Project design
 * [C4 model](https://github.com/RenoMuijsenberg/S3-Festival-Planner-Angular/wiki/C4-model#version-2)
