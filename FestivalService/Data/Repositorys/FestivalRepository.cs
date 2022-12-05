@@ -21,4 +21,11 @@ public class FestivalRepository : IFestivalRepository
     {
         return await _db.Festivals.FirstAsync(x => x.FestivalName == name);
     }
-}
+    
+    public bool DeleteAllFestivals()
+    {
+        var result = _db.Database.ExecuteSqlRaw("TRUNCATE TABLE festivals");
+
+        return result != 0;
+    }
+}   

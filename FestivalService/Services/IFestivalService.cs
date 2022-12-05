@@ -6,4 +6,5 @@ public interface IFestivalService
 {
     Task<List<FestivalModel>> GetAllFestivals();
     Task<FestivalModel> GetSpecificFestival(string name);
+    bool DeleteAllFestivals();
 }
