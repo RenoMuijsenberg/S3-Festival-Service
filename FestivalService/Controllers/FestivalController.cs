@@ -26,4 +26,10 @@ public class FestivalController : ControllerBase
     {
         return await _service.GetSpecificFestival(festivalName);
     }
+
+    [HttpDelete("festivals/all")]
+    public bool DeleteAllFestivals()
+    {
+        return _service.DeleteAllFestivals();
+    }
 }

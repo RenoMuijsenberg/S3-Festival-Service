@@ -19,7 +19,7 @@ public class FestivalServiceTests
                 FestivalName = "Test",
                 FestivalAge = "18",
                 FestivalDate = "20-10-2022",
-                FestivalDay = "Saterday",
+                FestivalDay = "Saturday",
                 FestivalLocation = "Test street",
                 FestivalOrder = 0,
                 FestivalPrice = "20",
@@ -31,7 +31,7 @@ public class FestivalServiceTests
                 FestivalName = "Test",
                 FestivalAge = "18",
                 FestivalDate = "20-10-2022",
-                FestivalDay = "Saterday",
+                FestivalDay = "Saturday",
                 FestivalLocation = "Test street",
                 FestivalOrder = 0,
                 FestivalPrice = "20",
@@ -43,10 +43,9 @@ public class FestivalServiceTests
     [Fact]
     public async void GetAllFestivals_ReturnsListWithFestivals()
     {
-        //Arange
+        //Arrange
         var repo = new Mock<IFestivalRepository>();
         repo.Setup(m => m.GetAllFestivals()).ReturnsAsync(_festivals);
-
         var festivalService = new Services.FestivalService(repo.Object);
 
         //Act
@@ -54,5 +53,50 @@ public class FestivalServiceTests
         
         //Assert
         Assert.Equal(festivals.Count, _festivals.Count);
+    }
+    
+    [Fact]
+    public async void GetSpecificFestival_ReturnsSingleFestival()
+    {
+        //Arrange
+        var repo = new Mock<IFestivalRepository>();
+        repo.Setup(m => m.GetSpecificFestival(It.IsAny<string>())).ReturnsAsync(_festivals[0]);
+        var festivalService = new Services.FestivalService(repo.Object);
+
+        //Act
+        var festival = await festivalService.GetSpecificFestival(It.IsAny<string>());
+        
+        //Assert
+        Assert.Equal(festival, _festivals[0]);
+    }
+
+    [Fact]
+    public void DeleteAllFromDatabase_ReturnTrue()
+    {
+        //Arrange
+        var repo = new Mock<IFestivalRepository>();
+        repo.Setup(m => m.DeleteAllFestivals()).Returns(true);
+        var festivalService = new Services.FestivalService(repo.Object);
+        
+        //Act
+        var result = festivalService.DeleteAllFestivals();
+        
+        //Assert
+        Assert.True(result);
+    }
+    
+    [Fact]
+    public void DeleteAllFromDatabase_ReturnFalse()
+    {
+        //Arrange
+        var repo = new Mock<IFestivalRepository>();
+        repo.Setup(m => m.DeleteAllFestivals()).Returns(false);
+        var festivalService = new Services.FestivalService(repo.Object);
+        
+        //Act
+        var result = festivalService.DeleteAllFestivals();
+        
+        //Assert
+        Assert.False(result);
     }
 }
