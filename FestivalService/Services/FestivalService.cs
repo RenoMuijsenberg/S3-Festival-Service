@@ -22,4 +22,9 @@ public class FestivalService : IFestivalService
     {
         return await _repository.GetSpecificFestival(name);
     }
+
+    public bool DeleteAllFestivals()
+    {
+        return _repository.DeleteAllFestivals();
+    }
 }

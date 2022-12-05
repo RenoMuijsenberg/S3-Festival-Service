@@ -69,4 +69,34 @@ public class FestivalServiceTests
         //Assert
         Assert.Equal(festival, _festivals[0]);
     }
+
+    [Fact]
+    public void DeleteAllFromDatabase_ReturnTrue()
+    {
+        //Arrange
+        var repo = new Mock<IFestivalRepository>();
+        repo.Setup(m => m.DeleteAllFestivals()).Returns(true);
+        var festivalService = new Services.FestivalService(repo.Object);
+        
+        //Act
+        var result = festivalService.DeleteAllFestivals();
+        
+        //Assert
+        Assert.True(result);
+    }
+    
+    [Fact]
+    public void DeleteAllFromDatabase_ReturnFalse()
+    {
+        //Arrange
+        var repo = new Mock<IFestivalRepository>();
+        repo.Setup(m => m.DeleteAllFestivals()).Returns(false);
+        var festivalService = new Services.FestivalService(repo.Object);
+        
+        //Act
+        var result = festivalService.DeleteAllFestivals();
+        
+        //Assert
+        Assert.False(result);
+    }
 }
