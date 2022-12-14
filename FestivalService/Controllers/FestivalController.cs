@@ -32,4 +32,10 @@ public class FestivalController : ControllerBase
     {
         return _service.DeleteAllFestivals();
     }
+
+    [HttpPost]
+    public async Task<ActionResult<FestivalModel>> AddRangeOfFestivals(List<FestivalModel> festivalModelList)
+    {
+        return await _service.AddRangeOfFestivals(festivalModelList);
+    }
 }
