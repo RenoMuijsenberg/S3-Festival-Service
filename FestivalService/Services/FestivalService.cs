@@ -1,5 +1,6 @@
 ﻿using FestivalService.Data.Repositorys;
 using FestivalService.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FestivalService.Services;
 
@@ -26,5 +27,10 @@ public class FestivalService : IFestivalService
     public bool DeleteAllFestivals()
     {
         return _repository.DeleteAllFestivals();
+    }
+
+    public async Task<ActionResult<FestivalModel>> AddRangeOfFestivals(List<FestivalModel> festivalModelList)
+    {
+        return await _repository.AddRangeOfFestivals(festivalModelList);
     }
 }
